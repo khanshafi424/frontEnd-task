@@ -1,0 +1,51 @@
+<div class="container  mt-4">
+  <h2 class="bg-warning text-white p-2 font-weight-bold text-center">RK Task Manager App</h2>
+
+  <div class="row">
+      <div class="col-md-4 col-sm-12 ">
+          <div class="row">
+              <div class="col-6">            
+                <h2 class="text-white font-weight-bold">Task List</h2>
+              </div>
+              <div class="col-6">            
+               <button type="button" routerLink="/new-task-list" class="btn btn-info  float-right">New Task List</button>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                <div class="list-group">
+                  <a [routerLink]="['/task-list',item._id]" 
+                     routerLinkActive="active"
+                     *ngFor="let item of taskLists" class="list-group-item list-group-item-action ">
+                     {{item.title}}
+                    <span (click)="deleteTaskList(item)"  class=" float-right badge bg-danger text-white rounded-pill">X</span>
+                  </a>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-8 col-sm-12 mt-2">
+        <div class="row">
+                <div class="col-6 ">            
+                <h2 class="text-white font-weight-bold float-left">Linked Tasks</h2>
+                </div>
+                <div class="col-6">            
+                <button  (click)="newAddTask()" class="btn btn-info float-right">New Task</button>
+                </div>
+          </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <ul class="list-group">
+                <li [class.mark-completed] = "task.completed == true"
+                 style="cursor:pointer" *ngFor="let task of tasks" (click)="taskClicked(task)"
+                class="list-group-item d-flex justify-content-between align-items-center">
+                    {{task.title}}
+                    <span (click)="deleteTask(task)" class="badge bg-danger text-white rounded-pill">X</span>
+                  </li>
+                </ul>
+          </div>
+      </div>
+   </div>
+  </div>
+</div>

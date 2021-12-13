@@ -1,0 +1,14 @@
+// /* You can add global styles to this file, and also import other style files */
+
+// @import url(../node_modules/bootstrap-scss/bootstrap.scss);
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+$greenColor : rgb(76, 245, 76);
+$grayColor : rgb(117, 98, 98);
+
+html, body{
+    background: linear-gradient(to right top, $greenColor, $grayColor);
+    height: 100%;
+    font-family: 'Lato';
+    font-weight: bold;
+}

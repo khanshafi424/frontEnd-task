@@ -1,0 +1,16 @@
+<div class="container text-center mt-5 text-white">
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+                <div class="form-group">
+                  <h3 >Add New Task </h3>
+                  <input #taskInput type="text" class="form-control" id="TaskList" aria-describedby="emailHelp" placeholder="Enter Task">
+                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+            <button  class="btn btn-secondary mr-2" routerLink="../">Cancel</button>
+            <button (click)="addNewTask(taskInput.value)" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</div>
